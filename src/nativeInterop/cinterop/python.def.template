@@ -1,0 +1,11 @@
+headers = Python.h
+package = python
+compilerOpts.linux = -I{INCLUDE_DIR}
+linkerOpts.linux = -L/usr/lib -l python3
+
+---
+
+struct KtPyObject {{
+    PyObject base;
+    void* ktObject;
+}};
