@@ -12,8 +12,3 @@ internal inline fun <reified T: Any> CPointer<KtPyObject>.cast(): T {
     return ref.get()
 }
 
-private val scope = MemScope()
-
-internal inline fun <T : CVariable> CValue<T>.asPointer(): CPointer<T> {
-    return getPointer(scope)
-}

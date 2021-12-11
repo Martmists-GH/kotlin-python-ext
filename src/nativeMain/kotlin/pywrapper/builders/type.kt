@@ -45,7 +45,7 @@ internal inline fun <reified T> makePyType(
     ktp_is_gc: inquiry? = null,
     ktp_finalize: destructor? = null,
     ktp_vectorcall: vectorcallfunc? = null,
-) = cValue<PyTypeObject> {
+) = nativeHeap.alloc<PyTypeObject> {
     ob_base.PyVarObject_HEAD_INIT(PyType_Type.ptr, 0)
     tp_name = makeString(T::class.qualifiedName!!)
     tp_basicsize = sizeOf<KtPyObject>()

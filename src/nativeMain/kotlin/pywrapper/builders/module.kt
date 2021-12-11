@@ -1,7 +1,8 @@
 package pywrapper.builders
 
 import kotlinx.cinterop.CValue
-import kotlinx.cinterop.cValue
+import kotlinx.cinterop.alloc
+import kotlinx.cinterop.nativeHeap
 import python.*
 import pywrapper.ext.PyModuleDef_HEAD_INIT
 
@@ -13,7 +14,7 @@ internal fun makeModule(
     km_free: freefunc? = null,
     km_clear: inquiry? = null,
     km_traverse: traverseproc? = null,
-) : CValue<PyModuleDef> = cValue {
+) = nativeHeap.alloc<PyModuleDef> {
     m_base.PyModuleDef_HEAD_INIT()
     m_name = makeString(km_name)
     m_methods = km_methods?.let {

@@ -44,5 +44,5 @@ val PyType_NativeCounter = makePyType<NativeCounter>(
     ktp_init=initNativeCounter,
     ktp_free=KtType_StableRefFree,
     ktp_repr= KtType_StableRefRepr,
-    ktp_base=PyType_Configurable.asPointer()
+    ktp_base=PyType_Configurable.ptr
 )
