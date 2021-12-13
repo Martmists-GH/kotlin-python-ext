@@ -2,7 +2,8 @@
 
 This is a proof of concept for a Python extension in Kotlin.    
 It is recommended to read the [Official Python C API Documentation](https://docs.python.org/3/c-api/index.html) before getting started with this.    
-If you have any other questions, feel free to contact me on Discord at `Martmists#3740`.
+If you have any other questions, feel free to contact me on Discord at `Martmists#3740`.    
+For an (undocumented) example, you can refer to [kaudio-python](https://github.com/martmists-gh/kaudio-python)
 
 ## Usage
 
